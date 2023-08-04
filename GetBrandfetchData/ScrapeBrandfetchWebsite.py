@@ -24,7 +24,7 @@ def scrape_brandfetch(company_url):
     except AttributeError:
         logo_url = ""
     try:
-        all_social_icons = soup.find(class_="sc-638294dd-0").find_all("a")
+        all_social_icons = soup.find(class_="sc-638294dd-0").find_all("a")  # get social icons
         social_links = {icon.find("span").find("svg").get("data-icon"): icon.get("href") for icon in all_social_icons}
     except AttributeError:
         social_links = []
